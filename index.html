@@ -1,29 +1,64 @@
-<html lang="en">
-<head>
-	<title>Web Face Bulger</title>
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
 
-	<link rel="stylesheet" href="index.css"/>
+<head>
+	<title>GLFX Face Bulger</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-	<h1 style="margin-bottom: 0;">Web Face Bulger</h1>
-	<h3>By Ceiridge</h3>
-	<h6>Modified by Wider, sponsored by <a href="https://mzunguhosting.ml">MzunguHosting.ml</a></h6>
-<div id="loading-area">Please wait while the face detection AI model is loading...</div>
-<p>This is only a proof-of-concept.</p>
-<input type="range" id="strength-slider" min="0" max="5" value="1" step="0.1">
-<label for="strength-slider">Strength Multiplier: <span id="strength-slider-value">1.0</span></label>
-<button id="clear-images">Remove all images</button>
+	<div class="container bg-dark-subtle border border-dark-subtle rounded-5 p-5 text-center mt-5">
 
-<div id="drop-area" style="display: none">Drop or paste your image or video (MP4,H.264) here</div>
+		<h1 class="display-1 fw-bold">GLFX Face Bulger</h1>
 
-<script type="module">
-	import getVideoFrames from "https://deno.land/x/get_video_frames@v0.0.8/mod.js";
-	window.getVideoFrames = getVideoFrames;
-</script>
-<script src="lib/glfx.js"></script>
-<script src="lib/face-api.min.js"></script>
-<script src="index.js"></script>
+		<h3>Created by Ceiridge</h3>
+
+		<h6>Frontend enhanced by Joe Jagger</h6>
+
+		<div id="loading-area">Please wait while the face detection AI model is loading...</div>
+
+		<p>This is only designed to serve as a proof-of-concept.</p>
+
+
+		<div class="container bg-dark border rounded-1 p-4 vstack w-50">
+			<p class="text-start fw-bold italic">Controls</p>
+			<input type="range" id="strength-slider" min="0" max="5" value="1" step="0.1">
+			<label for="strength-slider" class="my-3">Strength Multiplier: <span
+					id="strength-slider-value">1.0</span></label>
+			<button id="clear-images" class="btn btn-danger ">Remove all images</button>
+		</div>
+
+		<p class="display-5 mt-5"> App State: <a id="state">Idle</a> </p>
+
+		<div id="drop-area" class="bg-dark mt-5 rounded-5 dotted py-5" style="display: none">
+			Drop or paste your media (Image or Video) here
+		</div>
+		<p class="mt-2">Notice: For Videos, only input MP4 files, with the encoding H.264.</p>
+		<p>Furthermore, when inputting a video, you may hear its' audio as it processes.</p>
+	</div>
+
+	<div class="bg-dark-subtle text-center mt-5 mx-4 rounded-4">
+	<h1 class="display-2 mb-5 p-4">Output:</h1>
+
+	<div id="results-container" class="d-flex flex-column align-items-center">
+
+	</div>
+	</div>
+
+
+
+
+
+	<script type="module">
+		import getVideoFrames from "https://deno.land/x/get_video_frames@v0.0.8/mod.js";
+		window.getVideoFrames = getVideoFrames;
+	</script>
+	<script src="lib/glfx.js"></script>
+	<script src="lib/face-api.min.js"></script>
+	<script src="index.js"></script>
 
 </body>
+
 </html>
